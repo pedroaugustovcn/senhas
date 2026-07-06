@@ -73,6 +73,7 @@ body{
 
 .parametro-senha__titulo{
     font-size:24px;
+    margin-bottom: 8px;
 }
 
 .parametro-coluna__senha{
@@ -91,28 +92,38 @@ body{
 }
 
 .parametro-senha__botao{
-background-color: var(--fundo-texto);
+    background-color: var(--fundo-texto);
     color: var(--branco);
     border: 2px solid var(--borda);
     padding: 24px;
     font-size: 24px;
 }
 
-/* Quando o mouse passar por cima do botão... */
 .parametro-senha__botao:hover {
-    color: #ffffff; /* Deixa o texto branco para dar contraste */
+    color: #ffffff;
     cursor: pointer;
-    
-    /* Ativa a animação chamada "efeito-rgb" que dura 2 segundos e fica rodando em loop */
     animation: efeito-rgb 2s linear infinite; 
 }
 
 .parametro-senha__texto{
-padding: 24px;
+    padding: 24px;
     border-top: 2px solid var(--borda);
     border-bottom: 2px solid var(--borda);
     margin: 0;
     font-size: 24px;
+}
+
+.parametro-senha-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -121,22 +132,42 @@ padding: 24px;
     }
 }
 
-/* Criando os passos da animação RGB */
 @keyframes efeito-rgb {
-    0% {
-        background-color: rgb(255, 0, 0); /* Vermelho */
-        box-shadow: 0 0 10px rgb(255, 0, 0); /* Brilho vermelho */
-    }
-    33% {
-        background-color: rgb(0, 255, 0); /* Verde */
-        box-shadow: 0 0 10px rgb(0, 255, 0); /* Brilho verde */
-    }
-    66% {
-        background-color: rgb(0, 0, 255); /* Azul */
-        box-shadow: 0 0 10px rgb(0, 0, 255); /* Brilho azul */
-    }
-    100% {
-        background-color: rgb(255, 0, 0); /* Volta para o Vermelho para fechar o ciclo perfeitamente */
-        box-shadow: 0 0 10px rgb(255, 0, 0);
-    }
+    0% { background-color: rgb(255, 0, 0); box-shadow: 0 0 10px rgb(255, 0, 0); }
+    33% { background-color: rgb(0, 255, 0); box-shadow: 0 0 10px rgb(0, 255, 0); }
+    66% { background-color: rgb(0, 0, 255); box-shadow: 0 0 10px rgb(0, 0, 255); }
+    100% { background-color: rgb(255, 0, 0); box-shadow: 0 0 10px rgb(255, 0, 0); }
+}
+
+.barra{
+    background-color: var(--fundo-senha);
+    height: 30px;
+    width: 100%;
+}
+
+.forca{
+    height: 30px;
+    position: relative;
+    bottom: 30px;
+    margin-bottom: -30px; 
+}
+
+.fraca{
+    width: 25%;
+    background-color: #E71B32; 
+}
+
+.parametro-senha-textos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.media{
+    background-color: #FAF408;
+    width: 50%;
+}
+
+.forte{
+    background-color: #00FF85;
+    width: 100%;
 }
